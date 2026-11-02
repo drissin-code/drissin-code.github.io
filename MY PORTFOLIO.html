@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drissin | AI/ML Developer</title>
+<meta name="description" content="Portfolio of Drissin, BCA student building deployed AI applications with Python, LLMs and agents.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --soft:#F3F7FF; --ink:#0A1428; --muted:#5B6A85; --line:#E1E8F5;
+  --accent:#0057FF; --cyan:#00C8FF; --accent-ink:#fff;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#070D1C; --soft:#0E1730; --ink:#EAF0FF; --muted:#93A3C2; --line:#1C2A4A;
+    --accent:#4D8DFF; --cyan:#22D3FF; --accent-ink:#06101F;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "Inter",system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:3px;border-radius:4px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font:800 20px "Sora",sans-serif;text-decoration:none;letter-spacing:-.02em}
+.logo i{font-style:normal;color:var(--accent)}
+nav a{margin-left:24px;text-decoration:none;color:var(--muted);font-weight:500;font-size:15px}
+nav a:hover{color:var(--accent)}
+
+.hero{padding:88px 0 80px}
+.hero h1{font:800 clamp(36px,7vw,72px)/1.08 "Sora",sans-serif;letter-spacing:-.035em;margin:0 0 26px;max-width:16ch;min-height:3.3em}
+.typed{color:var(--accent);border-right:.08em solid var(--cyan);padding-right:.06em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{border-color:transparent}}
+.hero p{max-width:56ch;color:var(--muted);font-size:19px;margin:0 0 34px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 24px;border-radius:10px;font-weight:600;text-decoration:none;border:1.5px solid var(--line);background:var(--bg);transition:border-color .15s,transform .15s}
+.btn:hover{border-color:var(--accent);transform:translateY(-2px)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+
+section{padding:64px 0;border-top:1px solid var(--line)}
+h2{font:800 30px "Sora",sans-serif;letter-spacing:-.025em;margin:0 0 36px}
+.project{display:grid;grid-template-columns:1fr auto;gap:8px 24px;padding:28px;margin:0 -28px 12px;border-radius:16px;transition:background .2s}
+.project:hover{background:var(--soft)}
+.project h3{font:700 23px "Sora",sans-serif;letter-spacing:-.02em;margin:0}
+.project p{grid-column:1;margin:4px 0 12px;max-width:62ch;color:var(--muted)}
+.status{align-self:start;font-size:13px;font-weight:600;padding:4px 12px;border-radius:999px;border:1.5px solid var(--line);color:var(--muted)}
+.status.live{border-color:var(--cyan);color:var(--accent);background:rgba(0,200,255,.1)}
+.stack{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0 0 6px}
+.stack li{font-size:13.5px;color:var(--ink);background:var(--soft);padding:3px 11px;border-radius:6px}
+.project:hover .stack li{background:var(--bg)}
+.links{grid-column:1/-1;display:flex;gap:22px;font-weight:600;font-size:15px}
+.links a{color:var(--accent);text-underline-offset:4px}
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:48px}
+.about p{margin:0 0 16px;color:var(--muted)}
+.skills{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.skills li{padding:16px 18px;background:var(--soft);border-radius:12px;border-left:3px solid var(--cyan)}
+.skills b{display:block;font-family:"Sora",sans-serif}
+.skills span{color:var(--muted);font-size:15px}
+.contact p{max-width:52ch;margin:0 0 22px;color:var(--muted)}
+footer{padding:32px 0 48px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+@media (max-width:720px){
+  .project{grid-template-columns:1fr;padding:24px 0;margin:0 0 8px}
+  .status{justify-self:start;grid-row:2}
+  .about{grid-template-columns:1fr}
+  nav a{margin-left:16px}
+  .hero{padding:48px 0 56px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#top">drissin<i>.</i></a>
+    <nav aria-label="Main">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <h1>I build AI apps that <span class="typed" id="typed" aria-live="off">run live.</span></h1>
+      <p>I'm a BCA student in Coimbatore, learning AI/ML and building voice assistants, LLM apps and agent pipelines. Every project below has its code on GitHub.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn" href="https://github.com/drissin-code">GitHub profile</a>
+      </div>
+    </div>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <article class="project">
+        <h3>AI Resume Analyzer</h3>
+        <span class="status live">Live</span>
+        <p>Upload a PDF resume and get an AI review of its strengths, gaps and suggested improvements. Deployed publicly so anyone can try it.</p>
+        <ul class="stack"><li>Python</li><li>Streamlit</li><li>Gemini API</li><li>pdfplumber</li></ul>
+        <div class="links">
+          <a href="https://drissin-resume-analyzer.streamlit.app">Try the live app</a>
+          <a href="https://github.com/drissin-code/ai-resume-analyzer">View code</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <h3>Tobby, AI voice companion</h3>
+        <span class="status">Building</span>
+        <p>A hands-free assistant you wake by whistling. It listens, thinks and talks back, remembers your profile, shows live weather, and lets you interrupt it mid-sentence.</p>
+        <ul class="stack"><li>Python</li><li>Whisper (CUDA)</li><li>Gemini</li><li>Edge-TTS</li><li>PyAudio</li></ul>
+        <div class="links">
+          <!-- TODO: replace with your real Tobby repo URL and demo video URL -->
+          <a href="https://github.com/drissin-code">View code</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <h3>Job &amp; Internship Hunter</h3>
+        <span class="status">v2 in progress</span>
+        <p>A multi-agent pipeline that searches live job listings across four countries, scores them against your skills, and summarizes the best matches.</p>
+        <ul class="stack"><li>Python</li><li>LangGraph</li><li>Adzuna API</li><li>Gemini</li><li>Streamlit (v2)</li></ul>
+        <div class="links">
+          <a href="https://github.com/drissin-code/job-internship-hunter">View code</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <h3>WhatsApp salon booking bot</h3>
+        <span class="status">Demo in progress</span>
+        <p>A chatbot that answers salon customers instantly on WhatsApp, quotes prices and books appointments into Google Sheets. Built for small businesses without a developer.</p>
+        <ul class="stack"><li>Python</li><li>Gemini function calling</li><li>Google Sheets</li><li>Twilio</li></ul>
+      </article>
+    </section>
+
+    <section id="about" class="about">
+      <div>
+        <h2>About</h2>
+        <p>I'm a second-year BCA student with an AI specialization at AJK College (Bharathiar University), based in Palakkad, Kerala.</p>
+        <p>My goal is to become an AI/ML engineer. I learn by shipping: each project gets deployed or demoed, with a README that explains how it works.</p>
+      </div>
+      <ul class="skills">
+        <li><b>Languages</b><span>Python, SQL (learning)</span></li>
+        <li><b>AI and agents</b><span>Gemini API, LangChain, LangGraph, CrewAI, Whisper</span></li>
+        <li><b>Apps and tools</b><span>Streamlit, Gradio, Git and GitHub, VS Code</span></li>
+      </ul>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p>Looking for an AI/ML internship or a project to work on? Send me a message.</p>
+      <div class="btns">
+        <a class="btn primary" href="mailto:drissindas41@gmail.com">Email me</a>
+        <a class="btn" href="https://github.com/drissin-code">GitHub</a>
+        <!-- TODO: add your LinkedIn URL -->
+        <a class="btn" href="https://www.linkedin.com/">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 Drissin. Built by hand with HTML and CSS.</footer>
+</div>
+
+<script>
+(function () {
+  var el = document.getElementById("typed");
+  var words = ["run live.", "talk back.", "find you jobs.", "book appointments."];
+  if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var w = 0, i = words[0].length, deleting = true;
+  function tick() {
+    var word = words[w];
+    el.textContent = word.slice(0, i);
+    var delay = deleting ? 45 : 85;
+    if (!deleting && i === word.length) { deleting = true; delay = 1600; }
+    else if (deleting && i === 0) { deleting = false; w = (w + 1) % words.length; delay = 350; }
+    else { i += deleting ? -1 : 1; }
+    setTimeout(tick, delay);
+  }
+  setTimeout(tick, 1800);
+})();
+</script>
+</body>
+</html>
